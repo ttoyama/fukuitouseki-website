@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>福井県透析施設ネットワーク</title>
+<meta name="description" content="福井県透析施設ネットワークの公式サイトです。">
+<style>
+  :root {
+    --ink: #1a2634;
+    --sub: #5c6b7a;
+    --line: #d8dee5;
+    --accent: #14607a;
+    --panel: #f4f7f9;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
+    color: var(--ink);
+    background: #fff;
+    line-height: 1.9;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; width: 100%; }
+
+  header { border-top: 4px solid var(--accent); padding: 72px 0 0; }
+  h1 {
+    font-size: 1.75rem;
+    letter-spacing: 0.04em;
+    margin: 0 0 8px;
+    font-weight: 600;
+  }
+  .en {
+    font-size: 0.8rem;
+    color: var(--sub);
+    letter-spacing: 0.08em;
+    margin: 0;
+  }
+
+  main { flex: 1; padding: 48px 0 72px; }
+
+  .notice {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 20px 24px;
+  }
+  .notice p { margin: 0; }
+  .notice .label {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 3px;
+    padding: 1px 8px;
+    margin-bottom: 8px;
+  }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 24px 0 40px;
+    font-size: 0.8rem;
+    color: var(--sub);
+  }
+  footer p { margin: 0; }
+
+  @media (max-width: 480px) {
+    header { padding-top: 48px; }
+    h1 { font-size: 1.4rem; }
+    main { padding: 32px 0 48px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>福井県透析施設ネットワーク</h1>
+    <p class="en">Fukui Dialysis Facility Network</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="notice">
+      <span class="label">お知らせ</span>
+      <p>災害透析マニュアルを作成しています。完成後、このサイトで公開します。</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>福井県透析施設ネットワーク</p>
+  </div>
+</footer>
+
+</body>
+</html>
