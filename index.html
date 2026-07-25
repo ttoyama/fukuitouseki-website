@@ -64,10 +64,11 @@
     margin: 0;
     background: var(--ground);
     color: var(--ink);
-    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic Medium",
-                 "Yu Gothic", "Noto Sans JP", "Meiryo", system-ui, sans-serif;
-    font-size: 16px;
-    line-height: 1.9;
+    font-family: "Avenir Next", "Segoe UI", Calibri,
+                 "Hiragino Maru Gothic ProN", "Meiryo",
+                 "Hiragino Sans", "Yu Gothic Medium", system-ui, sans-serif;
+    font-size: 16.5px;
+    line-height: 2;
     -webkit-font-smoothing: antialiased;
     font-feature-settings: "palt" 1;
   }
@@ -129,11 +130,11 @@
     line-height: 1.6;
   }
   h1 {
-    margin: 0 0 18px;
+    margin: 0 0 20px;
     font-size: clamp(1.7rem, 5.2vw, 2.6rem);
-    font-weight: 600;
-    letter-spacing: 0.015em;
-    line-height: 1.4;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    line-height: 1.5;
     text-wrap: balance;
   }
   .tagline {
@@ -141,16 +142,16 @@
     max-width: 30em;
     color: var(--on-deep-dim);
     font-size: 1rem;
-    line-height: 1.95;
+    line-height: 2.05;
+    letter-spacing: 0.03em;
   }
   .url {
     margin: 40px 0 0;
     padding-top: 26px;
     border-top: 1px solid rgba(157,185,195,.22);
-    font-family: ui-monospace, "SF Mono", "Menlo", monospace;
-    font-size: clamp(1.35rem, 4.6vw, 2.15rem);
+    font-size: clamp(1.4rem, 4.8vw, 2.2rem);
     font-weight: 500;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.045em;
     line-height: 1.4;
     color: #7db2c2;
     display: block;
@@ -193,8 +194,9 @@
   .status h2 {
     margin: 0;
     font-size: 1.15rem;
-    font-weight: 600;
-    line-height: 1.6;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    line-height: 1.65;
   }
   .status p {
     margin: 0;
@@ -239,9 +241,9 @@
 
   .body > :first-child { margin-top: 0; }
   .body > :last-child { margin-bottom: 0; }
-  .body p { margin: 0 0 18px; }
+  .body p { margin: 0 0 18px; letter-spacing: 0.025em; }
 
-  .lead { font-size: 1.04rem; line-height: 1.95; }
+  .lead { font-size: 1.04rem; line-height: 2.05; }
   .source { color: var(--faint); font-size: 0.8rem; }
 
   ul.jigyo {
