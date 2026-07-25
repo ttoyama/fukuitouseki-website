@@ -4,135 +4,330 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>福井県透析施設ネットワーク</title>
-<meta name="description" content="福井県透析施設ネットワークは、日本透析医会災害時情報ネットワークの福井支部会です。福井県の透析医療の向上発展のため、災害時のネットワーク構築や透析施設間の連絡協議を行っています。">
+<meta name="description" content="福井県透析施設ネットワークは、日本透析医会災害時情報ネットワークの福井支部会です。災害時にも透析医療を継続できる体制づくりに取り組んでいます。">
+<meta name="color-scheme" content="light dark">
 <style>
   :root {
-    --ink: #1a2634;
-    --sub: #5c6b7a;
-    --line: #d8dee5;
-    --accent: #14607a;
-    --panel: #f4f7f9;
+    --ground:  #fafbfc;
+    --raised:  #ffffff;
+    --ink:     #14202a;
+    --muted:   #5a6b78;
+    --faint:   #8a99a5;
+    --line:    #e0e6ea;
+    --accent:  #2c5f6f;
+    --alert:   #a8620e;
+    --alert-bg:#fdf6ec;
   }
-  * { box-sizing: border-box; }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground:  #10171d;
+      --raised:  #161f26;
+      --ink:     #e4eaee;
+      --muted:   #94a4b0;
+      --faint:   #6d7d89;
+      --line:    #253039;
+      --accent:  #7db2c2;
+      --alert:   #d99a4a;
+      --alert-bg:#221a10;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground:  #10171d;
+    --raised:  #161f26;
+    --ink:     #e4eaee;
+    --muted:   #94a4b0;
+    --faint:   #6d7d89;
+    --line:    #253039;
+    --accent:  #7db2c2;
+    --alert:   #d99a4a;
+    --alert-bg:#221a10;
+  }
+  :root[data-theme="light"] {
+    --ground:  #fafbfc;
+    --raised:  #ffffff;
+    --ink:     #14202a;
+    --muted:   #5a6b78;
+    --faint:   #8a99a5;
+    --line:    #e0e6ea;
+    --accent:  #2c5f6f;
+    --alert:   #a8620e;
+    --alert-bg:#fdf6ec;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
   body {
     margin: 0;
-    font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
+    background: var(--ground);
     color: var(--ink);
-    background: #fff;
-    line-height: 1.9;
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic Medium",
+                 "Yu Gothic", "Noto Sans JP", "Meiryo", system-ui, sans-serif;
     font-size: 16px;
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "palt" 1;
   }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
 
-  header { border-top: 4px solid var(--accent); padding: 64px 0 0; }
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  a { color: var(--accent); }
+  a:focus-visible,
+  summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* ---------- header ---------- */
+
+  header {
+    padding: 72px 0 0;
+  }
+  .mark {
+    display: block;
+    width: 34px;
+    height: 3px;
+    background: var(--accent);
+    margin-bottom: 26px;
+  }
   h1 {
-    font-size: 1.75rem;
-    letter-spacing: 0.04em;
-    margin: 0 0 8px;
+    font-size: clamp(1.55rem, 4.4vw, 2.05rem);
     font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.45;
+    text-wrap: balance;
+    margin: 0 0 14px;
   }
-  .en {
-    font-size: 0.8rem;
-    color: var(--sub);
-    letter-spacing: 0.08em;
+  .affiliation {
     margin: 0;
-  }
-
-  main { padding: 40px 0 72px; }
-  section { margin-top: 44px; }
-  section:first-child { margin-top: 0; }
-
-  h2 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin: 0 0 16px;
-    padding-left: 10px;
-    border-left: 3px solid var(--accent);
-  }
-  p { margin: 0 0 16px; }
-  p:last-child { margin-bottom: 0; }
-
-  .notice {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    padding: 20px 24px;
-  }
-  .notice p { margin: 0; }
-  .notice .label {
-    display: inline-block;
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    color: var(--accent);
-    border: 1px solid var(--accent);
-    border-radius: 3px;
-    padding: 1px 8px;
-    margin-bottom: 8px;
-  }
-
-  ol.jigyo { margin: 0; padding-left: 1.4em; }
-  ol.jigyo li { margin-bottom: 6px; }
-
-  a.pdf {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 9px 16px;
-    border: 1px solid var(--line);
-    border-radius: 5px;
-    color: var(--accent);
-    text-decoration: none;
+    color: var(--muted);
     font-size: 0.9rem;
-    transition: background 0.15s;
+    line-height: 1.7;
   }
-  a.pdf:hover { background: var(--panel); }
-  a.pdf .ext { font-size: 0.7rem; color: var(--sub); }
+  .romaji {
+    margin: 6px 0 0;
+    color: var(--faint);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    font-family: system-ui, sans-serif;
+  }
 
-  ul.programs { list-style: none; margin: 0; padding: 0; }
+  /* ---------- manual status ---------- */
+
+  .status {
+    margin: 52px 0 0;
+    background: var(--alert-bg);
+    border: 1px solid color-mix(in srgb, var(--alert) 24%, transparent);
+    border-radius: 4px;
+    padding: 22px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .status .tag {
+    align-self: flex-start;
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    color: var(--alert);
+    font-weight: 600;
+  }
+  .status .headline {
+    font-size: 1.02rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.7;
+  }
+  .status .detail {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+
+  /* ---------- sections ---------- */
+
+  main { padding-bottom: 96px; }
+
+  section {
+    display: grid;
+    grid-template-columns: 148px 1fr;
+    gap: 0 32px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  section:first-of-type { padding-top: 56px; }
+  section:last-of-type { border-bottom: none; }
+
+  section > h2 {
+    grid-column: 1;
+    margin: 0;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    line-height: 2.3;
+  }
+  section > .body { grid-column: 2; }
+
+  .body > :first-child { margin-top: 0; }
+  .body > :last-child { margin-bottom: 0; }
+  .body p { margin: 0 0 18px; }
+
+  .lead {
+    font-size: 1.02rem;
+    line-height: 1.95;
+  }
+  .source {
+    color: var(--faint);
+    font-size: 0.8rem;
+  }
+
+  /* 事業: the six items are a set, not a sequence — no numbering */
+  ul.jigyo {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  ul.jigyo li {
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.85;
+  }
+  ul.jigyo li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.85em;
+    width: 8px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  /* documents */
+  .doc {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 10px 18px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: var(--raised);
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.94rem;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .doc:hover { border-color: var(--accent); color: var(--accent); }
+  .doc .kind {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: var(--faint);
+    font-family: system-ui, sans-serif;
+  }
+
+  ul.programs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
   ul.programs li {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    gap: 16px;
+    gap: 20px;
     flex-wrap: wrap;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
+    padding: 15px 0;
+    border-top: 1px solid var(--line);
   }
-  ul.programs li:first-child { border-top: 1px solid var(--line); }
-  ul.programs .date { font-size: 0.95rem; }
-  ul.programs a { color: var(--accent); font-size: 0.85rem; text-decoration: none; }
+  ul.programs li:last-child { border-bottom: 1px solid var(--line); }
+  ul.programs .when {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.01em;
+  }
+  ul.programs a {
+    font-size: 0.85rem;
+    text-decoration: none;
+    white-space: nowrap;
+  }
   ul.programs a:hover { text-decoration: underline; }
 
   table.fee {
     border-collapse: collapse;
-    font-size: 0.95rem;
-    margin-bottom: 16px;
+    width: 100%;
+    max-width: 380px;
+    font-size: 0.94rem;
+    margin: 0 0 4px;
   }
-  table.fee th, table.fee td {
-    border: 1px solid var(--line);
-    padding: 8px 20px 8px 14px;
+  table.fee th,
+  table.fee td {
     text-align: left;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line);
   }
-  table.fee th { background: var(--panel); font-weight: 600; }
+  table.fee tr:first-child th,
+  table.fee tr:first-child td { border-top: 1px solid var(--line); }
+  table.fee th { font-weight: 500; color: var(--muted); }
+  table.fee td {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
 
-  dl.jimu { margin: 0; }
-  dl.jimu dt { font-size: 0.8rem; color: var(--sub); letter-spacing: 0.06em; }
-  dl.jimu dd { margin: 0 0 14px; }
-  dl.jimu dd:last-child { margin-bottom: 0; }
+  dl.office {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  dl.office dt {
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    color: var(--faint);
+    line-height: 1.6;
+  }
+  dl.office dd {
+    margin: 2px 0 0;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------- footer ---------- */
 
   footer {
     border-top: 1px solid var(--line);
-    padding: 24px 0 40px;
-    font-size: 0.8rem;
-    color: var(--sub);
+    padding: 26px 0 56px;
+    color: var(--faint);
+    font-size: 0.78rem;
   }
   footer p { margin: 0; }
 
-  @media (max-width: 480px) {
-    header { padding-top: 44px; }
-    h1 { font-size: 1.4rem; }
-    main { padding: 32px 0 48px; }
-    section { margin-top: 36px; }
+  /* ---------- narrow ---------- */
+
+  @media (max-width: 640px) {
+    body { font-size: 15.5px; }
+    .wrap { padding: 0 22px; }
+    header { padding-top: 48px; }
+    .status { margin-top: 40px; padding: 20px 22px; }
+    section {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      padding: 32px 0;
+    }
+    section:first-of-type { padding-top: 40px; }
+    section > h2 { grid-column: 1; line-height: 1.6; }
+    section > .body { grid-column: 1; }
+    ul.programs li { gap: 6px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
   }
 </style>
 </head>
@@ -140,80 +335,99 @@
 
 <header>
   <div class="wrap">
+    <span class="mark" aria-hidden="true"></span>
     <h1>福井県透析施設ネットワーク</h1>
-    <p class="en">Fukui Dialysis Facility Network</p>
+    <p class="affiliation">日本透析医会災害時情報ネットワーク 福井支部会</p>
+    <p class="romaji">FUKUI DIALYSIS FACILITY NETWORK</p>
   </div>
 </header>
 
 <main>
   <div class="wrap">
 
+    <div class="status">
+      <span class="tag">作成中</span>
+      <p class="headline">災害透析マニュアル</p>
+      <p class="detail">県内の各施設が災害時に使える手順として整備を進めています。完成後、このサイトで公開します。</p>
+    </div>
+
     <section>
-      <div class="notice">
-        <span class="label">お知らせ</span>
-        <p>災害透析マニュアルを作成しています。完成後、このサイトで公開します。</p>
+      <h2>目的</h2>
+      <div class="body">
+        <p class="lead">福井県の透析医療の向上発展のため、各種事業を行うことにより地域における透析医療に貢献し、あわせて会員相互の親睦を図ることを目的とします。</p>
+        <p class="source">会則 第2条</p>
       </div>
     </section>
 
     <section>
-      <h2>目的</h2>
-      <p>本会は、日本透析医会災害時情報ネットワークの福井支部会として、福井県の透析医療の向上発展のため、各種事業を行うことにより地域における透析医療に貢献し、あわせて会員相互の親睦を図ることを目的とします。（会則第2条）</p>
-    </section>
-
-    <section>
       <h2>事業</h2>
-      <ol class="jigyo">
-        <li>災害時のネットワークを構築し、対策強化を行う</li>
-        <li>感染・医療事故への対応等、透析の安全管理を高め、透析患者さんがより安全に透析を受けていただける環境を整備する</li>
-        <li>透析施設間の連絡協議を行う</li>
-        <li>関係官庁、保険審査機関及び医師会との連絡協調をはかる</li>
-        <li>定期的に総会を開催する</li>
-        <li>その他前条の目的達成に必要な事業を行う</li>
-      </ol>
+      <div class="body">
+        <ul class="jigyo">
+          <li>災害時のネットワークを構築し、対策強化を行う</li>
+          <li>感染・医療事故への対応等、透析の安全管理を高め、透析患者さんがより安全に透析を受けていただける環境を整備する</li>
+          <li>透析施設間の連絡協議を行う</li>
+          <li>関係官庁、保険審査機関及び医師会との連絡協調をはかる</li>
+          <li>定期的に総会を開催する</li>
+          <li>その他前条の目的達成に必要な事業を行う</li>
+        </ul>
+      </div>
     </section>
 
     <section>
       <h2>会則</h2>
-      <p>本会は平成20年5月17日に発足しました。会則には目的・事業・会員・役員・総会・会計の定めと、役員名簿を記載しています。</p>
-      <a class="pdf" href="documents/kaisoku-2024.pdf" target="_blank" rel="noopener">会則 <span class="ext">PDF</span></a>
+      <div class="body">
+        <p>平成20年5月17日に発足しました。目的・事業・会員・役員・総会・会計の定めと、役員名簿を記載しています。</p>
+        <a class="doc" href="documents/kaisoku-2024.pdf" target="_blank" rel="noopener">会則<span class="kind">PDF</span></a>
+      </div>
     </section>
 
     <section>
       <h2>講演会</h2>
-      <p>年1回の総会にあわせて講演会を開催しています。</p>
-      <ul class="programs">
-        <li>
-          <span class="date">2026年7月25日</span>
-          <a href="documents/program-2026-07-25.pdf" target="_blank" rel="noopener">プログラム (PDF) →</a>
-        </li>
-        <li>
-          <span class="date">2025年7月26日</span>
-          <a href="documents/program-2025-07-26.pdf" target="_blank" rel="noopener">プログラム (PDF) →</a>
-        </li>
-        <li>
-          <span class="date">2024年7月20日</span>
-          <a href="documents/program-2024-07-20.pdf" target="_blank" rel="noopener">プログラム (PDF) →</a>
-        </li>
-      </ul>
+      <div class="body">
+        <p>年1回の総会にあわせて開催しています。</p>
+        <ul class="programs">
+          <li>
+            <span class="when">2026年7月25日</span>
+            <a href="documents/program-2026-07-25.pdf" target="_blank" rel="noopener">プログラム PDF</a>
+          </li>
+          <li>
+            <span class="when">2025年7月26日</span>
+            <a href="documents/program-2025-07-26.pdf" target="_blank" rel="noopener">プログラム PDF</a>
+          </li>
+          <li>
+            <span class="when">2024年7月20日</span>
+            <a href="documents/program-2024-07-20.pdf" target="_blank" rel="noopener">プログラム PDF</a>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <section>
       <h2>入会</h2>
-      <p>会員は、福井県在住の透析医療に従事し、本会の目的及び趣旨に賛同した医師で構成します。入会を希望する方は、入会申込書に必要事項を記入のうえ会長に提出してください。</p>
-      <table class="fee">
-        <tr><th>施設会員</th><td>年額 10,000円（不課税）</td></tr>
-        <tr><th>個人会員</th><td>年額 1,000円（不課税）</td></tr>
-      </table>
+      <div class="body">
+        <p>会員は、福井県在住の透析医療に従事し、本会の目的及び趣旨に賛同した医師で構成します。入会を希望する方は、入会申込書に必要事項を記入のうえ会長に提出してください。</p>
+        <table class="fee">
+          <tr><th>施設会員</th><td>年額 10,000円</td></tr>
+          <tr><th>個人会員</th><td>年額 1,000円</td></tr>
+        </table>
+        <p class="source">いずれも不課税</p>
+      </div>
     </section>
 
     <section>
       <h2>事務局</h2>
-      <dl class="jimu">
-        <dt>設置</dt>
-        <dd>福井大学医学部附属病院 腎臓内科</dd>
-        <dt>連絡先</dt>
-        <dd>TEL: 0776-61-3111 / FAX: 0776-61-8120</dd>
-      </dl>
+      <div class="body">
+        <dl class="office">
+          <div>
+            <dt>設置</dt>
+            <dd>福井大学医学部附属病院 腎臓内科</dd>
+          </div>
+          <div>
+            <dt>電話 / FAX</dt>
+            <dd>0776-61-3111 / 0776-61-8120</dd>
+          </div>
+        </dl>
+      </div>
     </section>
 
   </div>
