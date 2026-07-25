@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>福井県透析施設ネットワーク</title>
-<meta name="description" content="福井県透析施設ネットワークの公式サイトです。">
+<meta name="description" content="福井県透析施設ネットワークは、日本透析医会災害時情報ネットワークの福井支部会です。福井県の透析医療の向上発展のため、災害時のネットワーク構築や透析施設間の連絡協議を行っています。">
 <style>
   :root {
     --ink: #1a2634;
@@ -14,7 +14,6 @@
     --panel: #f4f7f9;
   }
   * { box-sizing: border-box; }
-  html, body { height: 100%; }
   body {
     margin: 0;
     font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
@@ -22,12 +21,10 @@
     background: #fff;
     line-height: 1.9;
     font-size: 16px;
-    display: flex;
-    flex-direction: column;
   }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; width: 100%; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
 
-  header { border-top: 4px solid var(--accent); padding: 72px 0 0; }
+  header { border-top: 4px solid var(--accent); padding: 64px 0 0; }
   h1 {
     font-size: 1.75rem;
     letter-spacing: 0.04em;
@@ -41,7 +38,19 @@
     margin: 0;
   }
 
-  main { flex: 1; padding: 48px 0 72px; }
+  main { padding: 40px 0 72px; }
+  section { margin-top: 44px; }
+  section:first-child { margin-top: 0; }
+
+  h2 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0 0 16px;
+    padding-left: 10px;
+    border-left: 3px solid var(--accent);
+  }
+  p { margin: 0 0 16px; }
+  p:last-child { margin-bottom: 0; }
 
   .notice {
     background: var(--panel);
@@ -61,6 +70,56 @@
     margin-bottom: 8px;
   }
 
+  ol.jigyo { margin: 0; padding-left: 1.4em; }
+  ol.jigyo li { margin-bottom: 6px; }
+
+  a.pdf {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.15s;
+  }
+  a.pdf:hover { background: var(--panel); }
+  a.pdf .ext { font-size: 0.7rem; color: var(--sub); }
+
+  ul.programs { list-style: none; margin: 0; padding: 0; }
+  ul.programs li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  ul.programs li:first-child { border-top: 1px solid var(--line); }
+  ul.programs .date { font-size: 0.95rem; }
+  ul.programs a { color: var(--accent); font-size: 0.85rem; text-decoration: none; }
+  ul.programs a:hover { text-decoration: underline; }
+
+  table.fee {
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+  }
+  table.fee th, table.fee td {
+    border: 1px solid var(--line);
+    padding: 8px 20px 8px 14px;
+    text-align: left;
+  }
+  table.fee th { background: var(--panel); font-weight: 600; }
+
+  dl.jimu { margin: 0; }
+  dl.jimu dt { font-size: 0.8rem; color: var(--sub); letter-spacing: 0.06em; }
+  dl.jimu dd { margin: 0 0 14px; }
+  dl.jimu dd:last-child { margin-bottom: 0; }
+
   footer {
     border-top: 1px solid var(--line);
     padding: 24px 0 40px;
@@ -70,9 +129,10 @@
   footer p { margin: 0; }
 
   @media (max-width: 480px) {
-    header { padding-top: 48px; }
+    header { padding-top: 44px; }
     h1 { font-size: 1.4rem; }
     main { padding: 32px 0 48px; }
+    section { margin-top: 36px; }
   }
 </style>
 </head>
@@ -87,10 +147,75 @@
 
 <main>
   <div class="wrap">
-    <div class="notice">
-      <span class="label">お知らせ</span>
-      <p>災害透析マニュアルを作成しています。完成後、このサイトで公開します。</p>
-    </div>
+
+    <section>
+      <div class="notice">
+        <span class="label">お知らせ</span>
+        <p>災害透析マニュアルを作成しています。完成後、このサイトで公開します。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>目的</h2>
+      <p>本会は、日本透析医会災害時情報ネットワークの福井支部会として、福井県の透析医療の向上発展のため、各種事業を行うことにより地域における透析医療に貢献し、あわせて会員相互の親睦を図ることを目的とします。（会則第2条）</p>
+    </section>
+
+    <section>
+      <h2>事業</h2>
+      <ol class="jigyo">
+        <li>災害時のネットワークを構築し、対策強化を行う</li>
+        <li>感染・医療事故への対応等、透析の安全管理を高め、透析患者さんがより安全に透析を受けていただける環境を整備する</li>
+        <li>透析施設間の連絡協議を行う</li>
+        <li>関係官庁、保険審査機関及び医師会との連絡協調をはかる</li>
+        <li>定期的に総会を開催する</li>
+        <li>その他前条の目的達成に必要な事業を行う</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>会則</h2>
+      <p>本会は平成20年5月17日に発足しました。会則には目的・事業・会員・役員・総会・会計の定めと、役員名簿を記載しています。</p>
+      <a class="pdf" href="documents/kaisoku-2024.pdf" target="_blank" rel="noopener">会則 <span class="ext">PDF</span></a>
+    </section>
+
+    <section>
+      <h2>講演会</h2>
+      <p>年1回の総会にあわせて講演会を開催しています。</p>
+      <ul class="programs">
+        <li>
+          <span class="date">2026年7月25日</span>
+          <a href="documents/program-2026-07-25.pdf" target="_blank" rel="noopener">プログラム (PDF) →</a>
+        </li>
+        <li>
+          <span class="date">2025年7月26日</span>
+          <a href="documents/program-2025-07-26.pdf" target="_blank" rel="noopener">プログラム (PDF) →</a>
+        </li>
+        <li>
+          <span class="date">2024年7月20日</span>
+          <a href="documents/program-2024-07-20.pdf" target="_blank" rel="noopener">プログラム (PDF) →</a>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>入会</h2>
+      <p>会員は、福井県在住の透析医療に従事し、本会の目的及び趣旨に賛同した医師で構成します。入会を希望する方は、入会申込書に必要事項を記入のうえ会長に提出してください。</p>
+      <table class="fee">
+        <tr><th>施設会員</th><td>年額 10,000円（不課税）</td></tr>
+        <tr><th>個人会員</th><td>年額 1,000円（不課税）</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>事務局</h2>
+      <dl class="jimu">
+        <dt>設置</dt>
+        <dd>福井大学医学部附属病院 腎臓内科</dd>
+        <dt>連絡先</dt>
+        <dd>TEL: 0776-61-3111 / FAX: 0776-61-8120</dd>
+      </dl>
+    </section>
+
   </div>
 </main>
 
