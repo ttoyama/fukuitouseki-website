@@ -205,6 +205,54 @@
     line-height: 1.85;
   }
 
+  ol.steps {
+    list-style: none;
+    margin: 6px 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: var(--faint);
+    line-height: 1.6;
+  }
+  ol.steps li { display: flex; align-items: center; }
+  ol.steps li + li::before {
+    content: "";
+    width: 18px; height: 1px;
+    margin: 0 8px;
+    background: var(--line);
+  }
+  ol.steps .now {
+    color: var(--alert);
+    font-weight: 600;
+  }
+  ol.steps .now::before {
+    content: "";
+    display: inline-block;
+    width: 6px; height: 6px;
+    margin-right: 6px;
+    border-radius: 50%;
+    background: var(--alert);
+  }
+
+  dl.org { margin: 0; display: grid; gap: 22px; }
+  dl.org dt {
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    line-height: 1.8;
+  }
+  dl.org dt a { text-decoration: none; }
+  dl.org dt a:hover { text-decoration: underline; }
+  dl.org dd {
+    margin: 2px 0 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.9;
+    letter-spacing: 0.025em;
+  }
+
   /* ================= sections ================= */
 
   main { padding-bottom: 100px; }
@@ -425,9 +473,15 @@
   <div class="wrap">
 
     <div class="status">
-      <span class="tag">作成中</span>
+      <span class="tag">会員施設レビュー中</span>
       <h2>災害透析マニュアル</h2>
-      <p>県内の各施設が災害時に使える手順として整備を進めています。完成後、このサイトで公開します。</p>
+      <p>県内の各施設が災害時に使う手順書として、2026年9月に草稿が完成しました。会員施設のレビューを経て、2027年7月24日の総会で承認を受けたのち、このサイトで公開します。</p>
+      <ol class="steps">
+        <li>草稿</li>
+        <li class="now">施設レビュー</li>
+        <li>総会承認</li>
+        <li>公開</li>
+      </ol>
     </div>
 
     <section>
@@ -435,10 +489,76 @@
       <div class="body">
         <ul class="news">
           <li>
+            <span class="date">2026.09.11</span>
+            <span class="text">災害透析マニュアルの草稿が完成し、会員施設によるレビューを始めました。</span>
+          </li>
+          <li>
             <span class="date">2026.07.26</span>
             <span class="text">次回の講演会を <strong>2027年7月24日（土）</strong> に開催します。プログラムは決まり次第このページに掲載します。</span>
           </li>
         </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>活動の記録</h2>
+      <div class="body">
+        <ul class="news">
+          <li>
+            <span class="date">2008.05</span>
+            <span class="text">発足。日本透析医会災害時情報ネットワークの福井支部会として、県内の透析施設をつなぐ会になりました。</span>
+          </li>
+          <li>
+            <span class="date">2024.07</span>
+            <span class="text">講演会。令和6年能登半島地震での富山県透析医会と石川県透析連絡協議会の活動を、両会の会長・副会長から聴きました。</span>
+          </li>
+          <li>
+            <span class="date">2025.07</span>
+            <span class="text">講演会。福井県健康政策課の担当者が県の災害対応を講演しました。日本透析医会の後援を受けました。</span>
+          </li>
+          <li>
+            <span class="date">2025.11</span>
+            <span class="text">令和7年度中部ブロック DMAT 実動訓練に参加し、県内透析施設の被災状況の集約と患者搬送の調整を演習しました。</span>
+          </li>
+          <li>
+            <span class="date">2026.07</span>
+            <span class="text">総会・講演会を開催しました。</span>
+          </li>
+          <li>
+            <span class="date">2026.09</span>
+            <span class="text">災害透析マニュアルの草稿が完成し、会員施設のレビューに入りました。</span>
+          </li>
+          <li>
+            <span class="date">2027.07</span>
+            <span class="text">総会・講演会（予定）。災害透析マニュアルの承認を諮ります。</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>体制</h2>
+      <div class="body">
+        <p class="lead">福井県内の透析施設は、福井・坂井、奥越、丹南、嶺南の4つの医療圏に30施設あります。本会はこれらの施設と県、全国の災害時透析の仕組みをつなぐ結節点として活動しています。</p>
+        <p class="source">施設数は福井県「人工透析実施医療機関の状況」（2025年12月31日現在）によります。</p>
+        <dl class="org">
+          <div>
+            <dt><a href="https://www.saigai-touseki.net/" target="_blank" rel="noopener">日本透析医会 災害時情報ネットワーク</a></dt>
+            <dd>本会はその福井支部会です。発災時には県内各施設の稼働状況をこのネットワークに登録し、全国の透析施設と共有します。</dd>
+          </div>
+          <div>
+            <dt>福井県</dt>
+            <dd>健康福祉部 健康政策課と連携し、県の災害医療体制のなかで透析患者の受け入れと搬送を調整します。</dd>
+          </div>
+          <div>
+            <dt>DMAT</dt>
+            <dd>中部ブロックの実動訓練に参加し、災害医療チームとの情報共有と搬送調整の手順を確認しています。</dd>
+          </div>
+          <div>
+            <dt><a href="https://jhat.jp/" target="_blank" rel="noopener">JHAT（日本災害時透析医療協働支援チーム）</a></dt>
+            <dd>被災地の透析施設を支援する全国組織です。本会は県内からの隊員参加を進めています。</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
